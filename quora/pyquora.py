@@ -124,6 +124,11 @@ class Quora:
     def get_activity_keys():
         return POSSIBLE_FEED_KEYS
 
+    @staticmethod
+    def get_user_followers():
+        content = BeautifulSoup(requests.get('https://quora.com/' + user + '/followers').text)
+        
+
 class Activity:
     def __init__(self, upvotes=[], user_follows=[], question_follows=[], answers=[], questions=[], review_requests=[]):
         self.upvotes = upvotes
